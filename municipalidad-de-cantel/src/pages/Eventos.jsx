@@ -8,7 +8,7 @@ const Eventos = () => {
   const [currentImages, setCurrentImages] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/eventos/')  // Asegúrate de que esta URL sea correcta
+    axios.get('https://muni-backend.onrender.com/api/eventos/')  // Asegúrate de que esta URL sea correcta
       .then(response => {
         setEventos(response.data);  // Guardamos los eventos en el estado
       })
