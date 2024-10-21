@@ -10,7 +10,7 @@ const Inicio = () => {
   const [noticiasRecientes, setNoticiasRecientes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/inicio/')
+    axios.get('https://muni-backend.onrender.com/api/inicio/')
       .then(response => {
         setInicioData(response.data);
       })
@@ -20,7 +20,7 @@ const Inicio = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/noticias_recientes/')
+    axios.get('https://muni-backend.onrender.com/api/noticias_recientes/')
       .then(response => {
         setNoticiasRecientes(response.data);
       })
@@ -54,7 +54,7 @@ const Inicio = () => {
       {inicioData.imagenes_palacio && inicioData.imagenes_palacio.length > 0 ? (
         <div className="relative">
           <img
-            src={`http://127.0.0.1:8000${inicioData.imagenes_palacio[0].imagen}`}  
+            src={`https://muni-backend.onrender.com${inicioData.imagenes_palacio[0].imagen}`}  
             alt="Municipalidad de Cantel"
             className="w-full h-[60vh] object-cover cursor-pointer"
             onClick={() => openModal(inicioData.imagenes_palacio, 0)}  
@@ -102,7 +102,7 @@ const Inicio = () => {
             <div key={noticia.id} className="bg-white shadow-md rounded-lg p-4">
               {noticia.imagenes && noticia.imagenes.length > 0 && (
                 <img
-                  src={`http://127.0.0.1:8000${noticia.imagenes[0].imagen}`} 
+                  src={`https://muni-backend.onrender.com${noticia.imagenes[0].imagen}`} 
                   alt={noticia.titulo}
                   className="w-full h-48 object-cover rounded-md mb-4 cursor-pointer"
                   onClick={() => openModal(noticia.imagenes, 0)}  
@@ -121,7 +121,7 @@ const Inicio = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`http://127.0.0.1:8000${currentImages[currentImageIndex].imagen}`}
+              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}

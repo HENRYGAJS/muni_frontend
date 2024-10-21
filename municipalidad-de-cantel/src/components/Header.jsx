@@ -13,7 +13,7 @@ const Header = () => {
 
   // Obtener las imágenes del escudo municipal desde la API
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/inicio/')  // Asegúrate de que esta URL sea correcta
+    axios.get('https://muni-backend.onrender.com/api/inicio/')  // Asegúrate de que esta URL sea correcta
       .then(response => {
         const escudo = response.data.imagenes_escudo.length > 0 ? response.data.imagenes_escudo[0].imagen : null;
         setEscudoMunicipal(escudo);
@@ -42,9 +42,9 @@ const Header = () => {
         {/* Logo (escudo) con enlace al login de admin */}
         <div className="flex items-center relative z-10">
           {escudoMunicipal ? (
-            <a href="http://127.0.0.1:8000/admin/"> 
+            <a href="https://muni-backend.onrender.com/admin/"> 
               <img
-                src={`http://127.0.0.1:8000${escudoMunicipal}`}  // Mostrar el escudo municipal subido
+                src={`https://muni-backend.onrender.com${escudoMunicipal}`}  // Mostrar el escudo municipal subido
                 alt="Escudo Municipal de Cantel"
                 className="h-25 w-16 cursor-pointer"
               />
