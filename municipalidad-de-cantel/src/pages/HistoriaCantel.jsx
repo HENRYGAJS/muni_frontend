@@ -9,7 +9,7 @@ function HistoriaCantel() {
 
   // Obtener la información de la API
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/historia_cantel/')  // Asegúrate de que esta URL esté correcta
+    axios.get('https://muni-backend.onrender.com/api/historia_cantel/')  // Asegúrate de que esta URL esté correcta
       .then(response => {
         console.log(response.data);  // Verificar que los datos se están recibiendo correctamente
         setHistorias(response.data);  // Guardar todas las historias
@@ -49,7 +49,7 @@ function HistoriaCantel() {
           {historia.imagenes && historia.imagenes.length > 0 && (
             <div className="relative">
               <img
-                src={`http://127.0.0.1:8000${historia.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
+                src={`https://muni-backend.onrender.com${historia.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
                 alt="Historia de Cantel"
                 className="w-full h-auto object-cover mx-auto p-4 cursor-pointer"
                 onClick={() => openModal(historia.imagenes, 0)}  // Abrir modal al hacer clic
@@ -79,7 +79,7 @@ function HistoriaCantel() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`http://127.0.0.1:8000${currentImages[currentImageIndex].imagen}`}
+              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Cambiar a la siguiente imagen

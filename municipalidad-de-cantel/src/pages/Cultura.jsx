@@ -10,7 +10,7 @@ const Cultura = () => {
   const [currentEvento, setCurrentEvento] = useState(null);  // Para almacenar el evento cultural actual en el modal
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/eventos_culturales/')
+    axios.get('https://muni-backend.onrender.com/api/eventos_culturales/')
       .then((response) => {
         setEventos(response.data);
       })
@@ -22,7 +22,7 @@ const Cultura = () => {
   const openModal = (evento, imageIndex) => {
     setCurrentEvento(evento);       // Guardamos el evento seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`http://127.0.0.1:8000${evento.imagenes[imageIndex].imagen}`);
+    setSelectedImage(`https://muni-backend.onrender.com${evento.imagenes[imageIndex].imagen}`);
     setIsModalOpen(true);         // Mostramos el modal
   };
 
@@ -36,7 +36,7 @@ const Cultura = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentEvento.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`http://127.0.0.1:8000${currentEvento.imagenes[nextImageIndex].imagen}`);
+      setSelectedImage(`https://muni-backend.onrender.com${currentEvento.imagenes[nextImageIndex].imagen}`);
     }
   };
 
@@ -54,7 +54,7 @@ const Cultura = () => {
               <div key={eventoIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {evento.imagenes.length > 0 && (
                   <img
-                    src={`http://127.0.0.1:8000${evento.imagenes[evento.currentImageIndex || 0].imagen}`}
+                    src={`https://muni-backend.onrender.com${evento.imagenes[evento.currentImageIndex || 0].imagen}`}
                     alt={evento.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(evento, evento.currentImageIndex || 0)}

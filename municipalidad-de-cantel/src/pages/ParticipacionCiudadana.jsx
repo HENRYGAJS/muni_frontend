@@ -59,7 +59,7 @@ function ParticipacionCiudadana() {
     };
 
     // Conexión al backend
-    axios.post('http://127.0.0.1:8000/api/crear_reporte/', data)
+    axios.post('https://muni-backend.onrender.com/api/crear_reporte/', data)
       .then((response) => {
         alert('Reporte enviado correctamente');
         setFormData({ nombre: "", correo: "", telefono: "", asunto: "", mensaje: "" });

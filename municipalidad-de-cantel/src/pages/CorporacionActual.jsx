@@ -9,7 +9,7 @@ function CorporacionActual() {
 
   // Obtener la información de la API
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/corporacion_actual/')
+    axios.get('https://muni-backend.onrender.com/api/corporacion_actual/')
       .then(response => {
         console.log(response.data);  // Verificar que los datos se están recibiendo correctamente
         setCorporacion(response.data);
@@ -47,7 +47,7 @@ function CorporacionActual() {
       {corporacion.imagenes && corporacion.imagenes.length > 0 && (
         <div className="relative">
           <img
-            src={`http://127.0.0.1:8000${corporacion.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
+            src={`https://muni-backend.onrender.com${corporacion.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
             alt="Municipalidad de Cantel"
             className="w-full h-auto object-cover mx-auto p-4 cursor-pointer"
             onClick={() => openModal(corporacion.imagenes, 0)}  // Abrir modal al hacer clic
@@ -93,7 +93,7 @@ function CorporacionActual() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`http://127.0.0.1:8000${currentImages[currentImageIndex].imagen}`}
+              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Cambiar a la siguiente imagen

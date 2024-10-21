@@ -7,7 +7,7 @@ const Servicios = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/servicios/')
+    axios.get('https://muni-backend.onrender.com/api/servicios/')
       .then((response) => {
         setServicios(response.data);
       })
@@ -41,10 +41,10 @@ const Servicios = () => {
               <p className="text-sm text-gray-600 mb-4 ">{servicio.descripcion}</p>
               {servicio.imagenes.length > 0 && (
                 <img
-                  src={`http://127.0.0.1:8000${servicio.imagenes[0].imagen}`}
+                  src={`https://muni-backend.onrender.com${servicio.imagenes[0].imagen}`}
                   alt={servicio.nombre}
                   className="w-full h-40 object-cover cursor-pointer"
-                  onClick={() => openModal(`http://127.0.0.1:8000${servicio.imagenes[0].imagen}`)}
+                  onClick={() => openModal(`https://muni-backend.onrender.com${servicio.imagenes[0].imagen}`)}
                 />
               )}
               <div className="mt-4">
@@ -53,7 +53,7 @@ const Servicios = () => {
                   {servicio.archivos.map((archivo, index) => (
                     <li key={index}>
                       <a
-                        href={`http://127.0.0.1:8000${archivo.archivo}`}
+                        href={`https://muni-backend.onrender.com${archivo.archivo}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 underline"

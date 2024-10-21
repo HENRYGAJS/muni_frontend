@@ -10,7 +10,7 @@ const Gastronomia = () => {
   const [currentPlato, setCurrentPlato] = useState(null);  // Para almacenar el plato actual en el modal
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/platos_gastronomicos/')
+    axios.get('https://muni-backend.onrender.com/api/platos_gastronomicos/')
       .then((response) => {
         setPlatos(response.data);
       })
@@ -22,7 +22,7 @@ const Gastronomia = () => {
   const openModal = (plato, imageIndex) => {
     setCurrentPlato(plato);       // Guardamos el plato seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`http://127.0.0.1:8000${plato.imagenes[imageIndex].imagen}`);
+    setSelectedImage(`https://muni-backend.onrender.com${plato.imagenes[imageIndex].imagen}`);
     setIsModalOpen(true);         // Mostramos el modal
   };
 
@@ -36,7 +36,7 @@ const Gastronomia = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentPlato.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`http://127.0.0.1:8000${currentPlato.imagenes[nextImageIndex].imagen}`);
+      setSelectedImage(`https://muni-backend.onrender.com${currentPlato.imagenes[nextImageIndex].imagen}`);
     }
   };
 
@@ -54,7 +54,7 @@ const Gastronomia = () => {
               <div key={platoIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {plato.imagenes.length > 0 && (
                   <img
-                    src={`http://127.0.0.1:8000${plato.imagenes[plato.currentImageIndex || 0].imagen}`}
+                    src={`https://muni-backend.onrender.com${plato.imagenes[plato.currentImageIndex || 0].imagen}`}
                     alt={plato.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(plato, plato.currentImageIndex || 0)}
