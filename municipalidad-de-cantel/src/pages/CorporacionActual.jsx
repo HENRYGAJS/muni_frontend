@@ -47,7 +47,7 @@ function CorporacionActual() {
       {corporacion.imagenes && corporacion.imagenes.length > 0 && (
         <div className="relative">
           <img
-            src={`https://muni-backend.onrender.com${corporacion.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
+            src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${corporacion.imagenes[0].imagen.replace('media/', '')}`}   // Eliminar 'media/' del inicio // Mostrar la primera imagen como encabezado
             alt="Municipalidad de Cantel"
             className="w-full h-auto object-cover mx-auto p-4 cursor-pointer"
             onClick={() => openModal(corporacion.imagenes, 0)}  // Abrir modal al hacer clic
@@ -93,7 +93,7 @@ function CorporacionActual() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
+              src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Cambiar a la siguiente imagen

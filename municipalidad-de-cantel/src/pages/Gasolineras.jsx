@@ -22,10 +22,10 @@ const Gasolineras = () => {
   const openModal = (lugar, imageIndex) => {
     setCurrentLugar(lugar);       // Guardamos el lugar seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`https://muni-backend.onrender.com${lugar.imagenes[imageIndex].imagen}`);
+    setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${lugar.imagenes[imageIndex].imagen.replace('media/', '')}`); //Elimina 'media/'
     setIsModalOpen(true);         // Mostramos el modal
   };
-
+ 
   const closeModal = () => {
     setIsModalOpen(false);        // Cerramos el modal
     setSelectedImage(null);       // Limpiamos la imagen seleccionada
@@ -36,7 +36,7 @@ const Gasolineras = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentLugar.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`https://muni-backend.onrender.com${currentLugar.imagenes[nextImageIndex].imagen}`);
+      setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentLugar.imagenes[nextImageIndex].imagen.replace('media/', '')}`); //Elimina 'media/'
     }
   };
 
@@ -55,7 +55,7 @@ const Gasolineras = () => {
               <div key={lugarIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {lugar.imagenes.length > 0 && (
                   <img
-                    src={`https://muni-backend.onrender.com${lugar.imagenes[lugar.currentImageIndex || 0].imagen}`}
+                    src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${lugar.imagenes[lugar.currentImageIndex || 0].imagen.replace('media/', '')}`}
                     alt={lugar.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(lugar, lugar.currentImageIndex || 0)}

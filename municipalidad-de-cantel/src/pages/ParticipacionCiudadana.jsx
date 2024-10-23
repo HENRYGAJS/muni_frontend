@@ -108,6 +108,7 @@ function ParticipacionCiudadana() {
     <div className="flex flex-col lg:flex-row p-8 bg-white rounded-xl shadow-lg space-y-8 lg:space-y-0 lg:space-x-8">
       <div className="lg:w-3/5 p-6 bg-gray-50 rounded-lg shadow-inner">
         <h1 className="text-5xl font-extrabold mb-4 text-gray-800">Reporte de Fallos</h1>
+        <p className="text-lg text-gray-600 italic mb-6">Antes de realizar un reporte recuerde activar su gps para evitar problemas con el mapa.</p>
         <p className="text-lg text-gray-600 italic mb-6">Por favor, completa el formulario para enviarnos un reporte.</p>
         <p className="text-lg text-gray-600 italic mb-6">Si usted se encuentra en el lugar del incidente selecione "Usar mi Ubicacion Actual".</p>
         <p className="text-lg text-gray-600 italic mb-6">Si no se encuentra en el lugar del incidente, use el mapa y la opción "Marcar en el Mapa" para marcar la ubicación del incidente.</p>

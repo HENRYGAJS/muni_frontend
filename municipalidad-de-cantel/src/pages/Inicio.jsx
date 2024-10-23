@@ -54,7 +54,8 @@ const Inicio = () => {
       {inicioData.imagenes_palacio && inicioData.imagenes_palacio.length > 0 ? (
         <div className="relative">
           <img
-            src={`https://muni-backend.onrender.com${inicioData.imagenes_palacio[0].imagen}`}  
+
+            src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${inicioData.imagenes_palacio[0].imagen.replace('media/', '')}`}  
             alt="Municipalidad de Cantel"
             className="w-full h-[60vh] object-cover cursor-pointer"
             onClick={() => openModal(inicioData.imagenes_palacio, 0)}  
@@ -74,7 +75,7 @@ const Inicio = () => {
         </div>
       )}
 
-      
+
 
       
       {/* Descripción */}
@@ -104,7 +105,7 @@ const Inicio = () => {
             <div key={noticia.id} className="bg-white shadow-md rounded-lg p-4">
               {noticia.imagenes && noticia.imagenes.length > 0 && (
                 <img
-                  src={`https://muni-backend.onrender.com${noticia.imagenes[0].imagen}`} 
+                  src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${noticia.imagenes[0].imagen.replace('media/', '')}`} 
                   alt={noticia.titulo}
                   className="w-full h-48 object-cover rounded-md mb-4 cursor-pointer"
                   onClick={() => openModal(noticia.imagenes, 0)}  
@@ -123,7 +124,7 @@ const Inicio = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
+              src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}

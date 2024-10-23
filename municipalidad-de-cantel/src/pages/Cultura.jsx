@@ -22,10 +22,10 @@ const Cultura = () => {
   const openModal = (evento, imageIndex) => {
     setCurrentEvento(evento);       // Guardamos el evento seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`https://muni-backend.onrender.com${evento.imagenes[imageIndex].imagen}`);
+    setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${evento.imagenes[imageIndex].imagen.replace('media/', '')}`);// Eliminar 'media/' 
     setIsModalOpen(true);         // Mostramos el modal
   };
-
+  
   const closeModal = () => {
     setIsModalOpen(false);        // Cerramos el modal
     setSelectedImage(null);       // Limpiamos la imagen seleccionada
@@ -36,7 +36,7 @@ const Cultura = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentEvento.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`https://muni-backend.onrender.com${currentEvento.imagenes[nextImageIndex].imagen}`);
+      setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentEvento.imagenes[nextImageIndex].imagen.replace('media/', '')}`);
     }
   };
 
@@ -54,7 +54,8 @@ const Cultura = () => {
               <div key={eventoIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {evento.imagenes.length > 0 && (
                   <img
-                    src={`https://muni-backend.onrender.com${evento.imagenes[evento.currentImageIndex || 0].imagen}`}
+                  //src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
+                    src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${evento.imagenes[evento.currentImageIndex || 0].imagen.replace('media/', '')}`}
                     alt={evento.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(evento, evento.currentImageIndex || 0)}

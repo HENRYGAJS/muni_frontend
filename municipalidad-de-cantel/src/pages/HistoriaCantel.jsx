@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function HistoriaCantel() {
-  const [historias, setHistorias] = useState([]);  // Cambiado para manejar una lista de historias
+  const [historias, setHistorias] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentImages, setCurrentImages] = useState([]);
@@ -11,7 +11,7 @@ function HistoriaCantel() {
   useEffect(() => {
     axios.get('https://muni-backend.onrender.com/api/historia_cantel/')  // Asegúrate de que esta URL esté correcta
       .then(response => {
-        console.log(response.data);  // Verificar que los datos se están recibiendo correctamente
+        console.log(response.data);
         setHistorias(response.data);  // Guardar todas las historias
       })
       .catch(error => {
@@ -49,7 +49,7 @@ function HistoriaCantel() {
           {historia.imagenes && historia.imagenes.length > 0 && (
             <div className="relative">
               <img
-                src={`https://muni-backend.onrender.com${historia.imagenes[0].imagen}`}  // Mostrar la primera imagen como encabezado
+                src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${historia.imagenes[0].imagen.replace('media/', '')}`}  // Eliminar 'media/' del inicio
                 alt="Historia de Cantel"
                 className="w-full h-auto object-cover mx-auto p-4 cursor-pointer"
                 onClick={() => openModal(historia.imagenes, 0)}  // Abrir modal al hacer clic
@@ -79,7 +79,7 @@ function HistoriaCantel() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`https://muni-backend.onrender.com${currentImages[currentImageIndex].imagen}`}
+              src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Cambiar a la siguiente imagen

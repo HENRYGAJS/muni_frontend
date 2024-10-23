@@ -22,9 +22,10 @@ const Gastronomia = () => {
   const openModal = (plato, imageIndex) => {
     setCurrentPlato(plato);       // Guardamos el plato seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`https://muni-backend.onrender.com${plato.imagenes[imageIndex].imagen}`);
+    setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${plato.imagenes[imageIndex].imagen.replace('media/', '')}`);
     setIsModalOpen(true);         // Mostramos el modal
   };
+  
 
   const closeModal = () => {
     setIsModalOpen(false);        // Cerramos el modal
@@ -36,7 +37,7 @@ const Gastronomia = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentPlato.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`https://muni-backend.onrender.com${currentPlato.imagenes[nextImageIndex].imagen}`);
+      setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentPlato.imagenes[nextImageIndex].imagen.replace('media/', '')}`);
     }
   };
 
@@ -54,7 +55,7 @@ const Gastronomia = () => {
               <div key={platoIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {plato.imagenes.length > 0 && (
                   <img
-                    src={`https://muni-backend.onrender.com${plato.imagenes[plato.currentImageIndex || 0].imagen}`}
+                    src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${plato.imagenes[plato.currentImageIndex || 0].imagen.replace('media/', '')}`}
                     alt={plato.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(plato, plato.currentImageIndex || 0)}
