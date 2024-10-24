@@ -55,7 +55,9 @@ const Inicio = () => {
         <div className="relative">
           <img
 
-            src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${inicioData.imagenes_palacio[0].imagen.replace('media/', '')}`}  
+            //src={`{inicioData.imagenes_palacio[0].imagen.replace('media/', '')}`} 
+            src={inicioData.imagenes_palacio[0].imagen}
+ 
             alt="Municipalidad de Cantel"
             className="w-full h-[60vh] object-cover cursor-pointer"
             onClick={() => openModal(inicioData.imagenes_palacio, 0)}  
