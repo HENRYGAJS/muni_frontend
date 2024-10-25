@@ -45,7 +45,7 @@ const Header = () => {
             <a href="https://muni-backend.onrender.com/admin/"> 
               <img
               
-                src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${escudoMunicipal.replace('media/', '')}`}  // Mostrar el escudo municipal subido
+                src={escudoMunicipal}  // Mostrar el escudo municipal subido
                 alt="Escudo Municipal de Cantel"
                 className="h-25 w-16 cursor-pointer"
               />

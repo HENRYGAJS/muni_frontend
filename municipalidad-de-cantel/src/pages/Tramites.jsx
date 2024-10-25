@@ -51,7 +51,7 @@ const Tramites = () => {
               <p className="text-sm text-gray-600 mb-4 ">{tramite.descripcion}</p>
               {tramite.imagenes.length > 0 && (
                 <img
-                  src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${tramite.imagenes[0].imagen.replace('media/', '')}`}
+                  src={tramite.imagenes[0].imagen}
                   alt={tramite.nombre}
                   className="w-full h-40 object-cover cursor-pointer"
                   onClick={() => openModal(tramite, 0)} // Abrir modal con la primera imagen
@@ -63,7 +63,7 @@ const Tramites = () => {
                   {tramite.archivos.map((archivo, index) => (
                     <li key={index}>
                       <a
-                        href={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${archivo.archivo.replace('media/', '')}`}
+                        href={archivo.archivo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 underline"
@@ -83,7 +83,7 @@ const Tramites = () => {
           <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
             <div className="relative bg-white p-4 rounded-lg shadow-lg">
               <img
-                src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${selectedTramite.imagenes[selectedImageIndex].imagen.replace('media/', '')}`}
+                src={selectedTramite.imagenes[selectedImageIndex].imagen}
                 alt="Imagen ampliada"
                 className="max-w-full max-h-[80vh] object-contain cursor-pointer"
                 onClick={handleNextImage} // Cambiar a la siguiente imagen al hacer clic

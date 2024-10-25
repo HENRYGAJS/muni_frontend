@@ -49,7 +49,7 @@ function HistoriaCantel() {
           {historia.imagenes && historia.imagenes.length > 0 && (
             <div className="relative">
               <img
-                src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${historia.imagenes[0].imagen.replace('media/', '')}`}  // Eliminar 'media/' del inicio
+                src={historia.imagenes[0].imagen}  // Eliminar 'media/' del inicio
                 alt="Historia de Cantel"
                 className="w-full h-auto object-cover mx-auto p-4 cursor-pointer"
                 onClick={() => openModal(historia.imagenes, 0)}  // Abrir modal al hacer clic
@@ -79,7 +79,7 @@ function HistoriaCantel() {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
+              src={currentImages[currentImageIndex].imagen} // Eliminar 'media/' del inicio
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Cambiar a la siguiente imagen

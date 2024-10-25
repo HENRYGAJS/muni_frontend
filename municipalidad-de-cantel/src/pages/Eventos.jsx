@@ -49,7 +49,7 @@ const Eventos = () => {
               {evento.imagenes && evento.imagenes.length > 0 && (
                 <img
                   
-                  src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${evento.imagenes[0].imagen.replace('media/', '')}`}   // Eliminar 'media/' del inicio
+                  src={evento.imagenes[0].imagen}   // Eliminar 'media/' del inicio
               
                   alt={evento.titulo}
                   className="w-full h-full object-cover cursor-pointer"
@@ -75,7 +75,7 @@ const Eventos = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative bg-white p-4 rounded-lg shadow-lg">
             <img
-              src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
+              src={currentImages[currentImageIndex].imagen} // Eliminar 'media/' del inicio
               alt="Imagen ampliada"
               className="max-w-full max-h-[80vh] object-contain cursor-pointer mb-4"
               onClick={handleNextImage}  // Al hacer clic en la imagen, se cambia a la siguiente

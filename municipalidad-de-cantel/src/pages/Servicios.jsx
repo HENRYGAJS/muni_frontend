@@ -51,7 +51,7 @@ const Servicios = () => {
               <p className="text-sm text-gray-600 mb-4 ">{servicio.descripcion}</p>
               {servicio.imagenes.length > 0 && (
                 <img
-                  src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${servicio.imagenes[0].imagen.replace('media/', '')}`}
+                  src={servicio.imagenes[0].imagen}
                   alt={servicio.nombre}
                   className="w-full h-40 object-cover cursor-pointer"
                   onClick={() => openModal(servicio, 0)} // Abrir modal con la primera imagen
@@ -63,7 +63,7 @@ const Servicios = () => {
                   {servicio.archivos.map((archivo, index) => (
                     <li key={index}>
                       <a
-                        href={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${archivo.archivo.replace('media/', '')}`}
+                        href={archivo.archivo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 underline"
@@ -83,7 +83,7 @@ const Servicios = () => {
           <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
             <div className="relative bg-white p-4 rounded-lg shadow-lg">
               <img
-                src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${selectedServicio.imagenes[selectedImageIndex].imagen.replace('media/', '')}`}
+                src={selectedServicio.imagenes[selectedImageIndex].imagen}
                 alt="Imagen ampliada"
                 className="max-w-full max-h-[80vh] object-contain cursor-pointer"
                 onClick={handleNextImage} // Cambiar a la siguiente imagen al hacer clic

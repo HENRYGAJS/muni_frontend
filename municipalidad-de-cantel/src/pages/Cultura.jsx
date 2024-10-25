@@ -22,7 +22,7 @@ const Cultura = () => {
   const openModal = (evento, imageIndex) => {
     setCurrentEvento(evento);       // Guardamos el evento seleccionado
     setCurrentImageIndex(imageIndex);  // Guardamos el índice de la imagen
-    setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${evento.imagenes[imageIndex].imagen.replace('media/', '')}`);// Eliminar 'media/' 
+    setSelectedImage(evento.imagenes[imageIndex].imagen);
     setIsModalOpen(true);         // Mostramos el modal
   };
   
@@ -36,7 +36,7 @@ const Cultura = () => {
       // Avanzamos a la siguiente imagen dentro del modal
       const nextImageIndex = (currentImageIndex + 1) % currentEvento.imagenes.length;
       setCurrentImageIndex(nextImageIndex);
-      setSelectedImage(`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentEvento.imagenes[nextImageIndex].imagen.replace('media/', '')}`);
+      setSelectedImage(currentEvento.imagenes[nextImageIndex].imagen);
     }
   };
 
@@ -54,8 +54,8 @@ const Cultura = () => {
               <div key={eventoIndex} className="bg-white rounded-lg shadow-md min-w-[250px] md:min-w-[300px] overflow-hidden">
                 {evento.imagenes.length > 0 && (
                   <img
-                  //src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${currentImages[currentImageIndex].imagen.replace('media/', '')}`} // Eliminar 'media/' del inicio
-                    src={`https://municipalidad-cantel-media.s3.us-east-2.amazonaws.com${evento.imagenes[evento.currentImageIndex || 0].imagen.replace('media/', '')}`}
+                  
+                    src={evento.imagenes[evento.currentImageIndex || 0].imagen}
                     alt={evento.nombre}
                     className="w-full h-40 object-cover cursor-pointer"
                     onClick={() => openModal(evento, evento.currentImageIndex || 0)}

@@ -8,6 +8,8 @@ function Footer() {
         <p>© 2024 Municipalidad de Cantel. Todos los derechos reservados.</p>
         
         {/* Redes Sociales */}
+       
+        <p class="mt-5">Síguenos en nuestra redes oficiales</p>
         <div className="flex justify-center space-x-4 mt-4">
           <a href="https://www.facebook.com/p/Municipalidad-de-Cantel-Administraci%C3%B3n-2024-2028-61555813043886/?locale=es_LA" 
              target="_blank" 
@@ -27,8 +29,8 @@ function Footer() {
         
         {/* Número de Teléfono */}
         <div className="mt-4">
-          <a href="tel:+1234567890" className="text-white hover:text-gray-400">
-            <span className="text-lg">Llamar al: 7763 4044</span>
+          <a href="tel:77634044" className="text-white hover:text-gray-400">
+            <span className="text-lg">Contacto: 7763 4044</span>
           </a>
         </div>
       </div>
