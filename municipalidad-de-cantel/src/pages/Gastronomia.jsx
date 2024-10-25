@@ -63,11 +63,9 @@ const Gastronomia = () => {
                 )}
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{plato.nombre}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{plato.descripcion}</p>
-                  <Link
-                    
+                  <p className="text-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line">{plato.descripcion}</p>
+                  <Link 
                   >
-                  
                   </Link>
                 </div>
               </div>

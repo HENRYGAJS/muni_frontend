@@ -63,7 +63,7 @@ const Hospedaje = () => {
                 )}
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{lugar.nombre}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{lugar.descripcion}</p>
+                  <p className="text-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line">{lugar.descripcion}</p>
                   <Link
                     
                   >

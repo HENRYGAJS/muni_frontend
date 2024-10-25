@@ -48,7 +48,7 @@ const Tramites = () => {
           {tramites.map((tramite) => (
             <div key={tramite.id} className="bg-white rounded-lg shadow-md w-full md:w-1/3 p-4 mb-6">
               <h3 className="text-lg font-semibold mb-4">{tramite.nombre}</h3>
-              <p className="text-sm text-gray-600 mb-4 ">{tramite.descripcion}</p>
+              <p className="text-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line">{tramite.descripcion}</p>
               {tramite.imagenes.length > 0 && (
                 <img
                   src={tramite.imagenes[0].imagen}

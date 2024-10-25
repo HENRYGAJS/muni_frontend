@@ -48,7 +48,7 @@ const Servicios = () => {
           {servicios.map((servicio) => (
             <div key={servicio.id} className="bg-white rounded-lg shadow-md w-full md:w-1/3 p-4 mb-6">
               <h3 className="text-lg font-semibold mb-4 ">{servicio.nombre}</h3>
-              <p className="text-sm text-gray-600 mb-4 ">{servicio.descripcion}</p>
+              <p className="text-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line">{servicio.descripcion}</p>
               {servicio.imagenes.length > 0 && (
                 <img
                   src={servicio.imagenes[0].imagen}

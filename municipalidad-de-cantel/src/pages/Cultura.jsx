@@ -63,9 +63,10 @@ const Cultura = () => {
                 )}
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{evento.nombre}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{evento.descripcion}</p>
+                  <p className="ext-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line text-justify">{evento.descripcion}</p>
                   <Link
-                    
+                    //<p class="text-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line text-justify">
+
                   >
                     
                   </Link>

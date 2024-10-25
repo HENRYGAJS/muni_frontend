@@ -53,10 +53,8 @@ const Turismo = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-6">TURISMO</h2>
         <p className="text-center text-gray-600 mb-12">
-          Conoce los lugares más emblemáticos del Municipio de Cantel.
-          
+          Conoce los lugares más emblemáticos del Municipio de Cantel.  
         </p>
-
         <div className="relative flex justify-center items-center">
           <div className="flex overflow-x-scroll space-x-4 scrollbar-hide">
             {lugares.map((lugar, lugarIndex) => (
@@ -71,12 +69,9 @@ const Turismo = () => {
                 )}
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-semibold">{lugar.nombre}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{lugar.descripcion}</p>
-                  <Link
-                    //to={`/turismo/${lugar.id}`}
-                    //className="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors"
+                  <p className="ext-md md:text-lg lg:text-xl text-gray-700 mt-4 whitespace-pre-line text-justify">{lugar.descripcion}</p>
+                  <Link 
                   >
-                   
                   </Link>
                 </div>
               </div>
@@ -109,6 +104,3 @@ const Turismo = () => {
 };
 
 export default Turismo;
-
-
-//AIzaSyAxb327D_rmO4z3k9qnFUm96u0HDQcG6A8

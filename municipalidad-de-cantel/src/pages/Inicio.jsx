@@ -75,9 +75,6 @@ const Inicio = () => {
         </div>
       )}
 
-
-
-      
       {/* Descripción */}
       <div className="p-8 text-center">
         <p className="text-base md:text-lg lg:text-xl text-gray-800">
