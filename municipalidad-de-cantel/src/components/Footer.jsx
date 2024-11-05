@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-gray-800 text-white p-4 mt-8">
       <div className="container mx-auto text-center">
-        <p>© 2024 Municipalidad de Cantel. Todos los derechos reservados.</p>
+       
 
         {/* Sección de autoría y logo de la universidad */}
         <div className="mt-4 flex justify-center items-center space-x-2">
@@ -17,12 +17,19 @@ function Footer() {
           <p>Desarrollado por Henry Ulises Garcia Ajsac</p>
           
         </div>
-        <div>
+        <div className="mt-4 flex justify-center items-center space-x-2">
         <p>En colaboración con Universidad Mariano Galvez de Guatemala</p>
 
         </div>
 
+        <div className="mt-4 flex justify-center items-center space-x-2" >
+
+        <p>© 2024 Municipalidad de Cantel. Todos los derechos reservados.</p>
+
+        </div>
+
         {/* Redes Sociales */}
+        
         <p className="mt-5">Síguenos en nuestra redes oficiales</p>
         <div className="flex justify-center space-x-4 mt-4">
           <a href="https://www.facebook.com/p/Municipalidad-de-Cantel-Administraci%C3%B3n-2024-2028-61555813043886/?locale=es_LA" 
